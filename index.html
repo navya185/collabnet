@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollabNet | AI-Powered Creator & Brand Platform</title>
+  <meta name="description" content="CollabNet is the LinkedIn for Creators & Brands. Harness the power of AI to match authentic content creators with visionary campaigns, detect fraud, and automate workflow.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Background Glowing Blobs -->
+  <div class="ambient-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Header Sticky Navigation -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#/" class="logo" id="logo-home">
+        <span class="logo-dot"></span>CollabNet
+      </a>
+      
+      <!-- Nav Menu (Injected dynamically based on Auth State in app.js) -->
+      <ul class="nav-menu" id="nav-menu"></ul>
+
+      <div class="nav-actions" id="nav-actions">
+        <!-- Injected dynamically in app.js -->
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- 1. LANDING PAGE VIEW (#view-landing)           -->
+  <!-- ============================================== -->
+  <div id="view-landing" class="view-container active">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge-new">
+          <span class="badge-dot"></span>
+          <span>CollabNet AI 2.0 Live Now</span>
+        </div>
+        <h1 class="hero-title gradient-text">Where Authentic Creators Meet Visionary Brands</h1>
+        <p class="hero-subtitle">The LinkedIn for Creators & Brands. Build verified profiles, match instantly via audience-aligned AI parameters, and automate your campaign workflows.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" id="btn-hero-creator">Join as Creator</button>
+          <button class="btn btn-secondary btn-lg" id="btn-hero-brand">Join as Brand</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Floating Elements -->
+        <div class="floating-elem fe-avatar-group">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=60" alt="Avatar">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=60" alt="Avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=60" alt="Avatar">
+          </div>
+          <span style="font-size: 12px; font-weight:600;">10k+ Creators Active</span>
+        </div>
+        
+        <div class="floating-elem fe-campaign glass-card">
+          <i class="fa-solid fa-bolt" style="color:var(--cyan); margin-right:6px;"></i>
+          <span style="font-size: 13px; font-weight: 600;">Nike Campaign Matched</span>
+        </div>
+
+        <div class="floating-elem fe-chart glass-card">
+          <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase;">Avg. Engagement</span>
+          <div style="font-size: 18px; font-weight:700; color:var(--emerald); margin-top:4px;">8.42% <i class="fa-solid fa-arrow-trend-up"></i></div>
+          <svg viewBox="0 0 100 30" style="width: 100%; height: 25px; margin-top: 8px; stroke: var(--emerald); stroke-width: 2; fill: none;">
+            <path d="M0,25 Q15,5 30,18 T60,5 T90,20" />
+          </svg>
+        </div>
+
+        <!-- Central Mockup Card -->
+        <div class="hero-main-card glass-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 20px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60" alt="Profile" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+              <div>
+                <h4 style="font-size:14px; font-weight:700;">Aisha Patel</h4>
+                <p style="font-size:11px; color:var(--text-muted);">Fashion & Lifestyle</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-circle-check" style="color:var(--cyan); font-size:18px;"></i>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:20px;">
+            <div style="background:rgba(255,255,255,0.02); padding:10px; border-radius:8px; text-align:center;">
+              <span style="font-size:10px; color:var(--text-muted);">FOLLOWERS</span>
+              <p style="font-size:16px; font-weight:700; margin-top:2px;">482K</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.02); padding:10px; border-radius:8px; text-align:center;">
+              <span style="font-size:10px; color:var(--text-muted);">AI SCORE</span>
+              <p style="font-size:16px; font-weight:700; margin-top:2px; color:var(--indigo);">94/100</p>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="width: 100%;" id="btn-hero-mock-view">View Portfolio</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section" id="problems">
+      <div class="section-header">
+        <span class="section-label">The Challenges</span>
+        <h2 class="section-title">The Creator Economy is Fragmented</h2>
+        <p class="section-subtitle">Friction, fraud, and lack of transparency limit collaborative growth. We bridge the gap.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card glass-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <h3 class="problem-title">Deal Scouting Struggle</h3>
+          <p class="problem-desc">Highly talented content creators spend up to 40% of their time pitch-emailing brands instead of producing creative content.</p>
+        </div>
+
+        <div class="problem-card glass-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <h3 class="problem-title">Manual Brand Scouting</h3>
+          <p class="problem-desc">Brands filter through thousands of creators manually, getting lost in spreadsheets and outdated media kits.</p>
+        </div>
+
+        <div class="problem-card glass-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-user-slash"></i>
+          </div>
+          <h3 class="problem-title">Fake Metrics & Followers</h3>
+          <p class="problem-desc">Influencer marketing budgets are wasted on accounts with bought bot followers and artificial comment engagement.</p>
+        </div>
+
+        <div class="problem-card glass-card">
+          <div class="card-icon-wrap">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="problem-title">Siloed Workflows</h3>
+          <p class="problem-desc">Messaging, contracts, analytics, and payouts happen across five different platforms with zero unified tracking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section" id="solution">
+      <div class="section-header">
+        <span class="section-label">Our Solution</span>
+        <h2 class="section-title">Intelligent Centralized Collaboration</h2>
+        <p class="section-subtitle">CollabNet integrates profiles, campaigns, verification, and messaging in one seamless layer.</p>
+      </div>
+
+      <div class="solution-grid">
+        <div class="solution-card glass-card">
+          <div class="card-icon-wrap"><i class="fa-solid fa-user-check"></i></div>
+          <h3 class="solution-title">Creator Profiles</h3>
+          <p class="solution-desc">Integrates deep analytics across Instagram, YouTube, and X. Builds verified credentials, pricing guides, and automatic media kits updated live.</p>
+          <a class="solution-link" href="#/creators">Browse Creators <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="solution-card glass-card">
+          <div class="card-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="solution-title">Brand Dashboard</h3>
+          <p class="solution-desc">Allows brands to list campaigns, filter targets by precise engagement profiles, manage incoming proposals, and track real-time analytics.</p>
+          <a class="solution-link" href="#/creators">Explore Dashboard <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="solution-card glass-card">
+          <div class="card-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+          <h3 class="solution-title">AI Matching Engine</h3>
+          <p class="solution-desc">Matches campaigns based on deep parameters: audience age/gender alignment, geographic density, brand affinity, and budget constraints.</p>
+          <a class="solution-link" data-scroll="ai-match" href="#/ai-match">How it Works <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Matching Deep Dive Section -->
+    <section class="section" id="ai-match">
+      <div class="section-header">
+        <span class="section-label">AI Engine</span>
+        <h2 class="section-title">Intelligent Audience Alignment</h2>
+        <p class="section-subtitle">Stop targeting superficial follower numbers. Match with the exact audience who converts.</p>
+      </div>
+
+      <div class="ai-match-container">
+        <!-- Left Column: Campaign Requirements (Interactive Selection) -->
+        <div class="ai-match-req glass-card">
+          <div class="req-header">
+            <h3 style="font-size: 20px; font-weight:700; margin-bottom:6px;">Campaign Matching Input</h3>
+            <p style="font-size:12px; color:var(--text-muted);">Adjust parameters to calculate custom score</p>
+          </div>
+          
+          <div class="req-body" style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+            <div class="form-group">
+              <label style="font-size:11px; text-transform:uppercase;">Niche Focus</label>
+              <select id="match-niche" class="filter-select">
+                <option value="fashion">Fashion & Lifestyle</option>
+                <option value="tech">Technology & Gadgets</option>
+                <option value="gaming">Gaming & Esports</option>
+                <option value="travel">Travel & Photography</option>
+                <option value="beauty">Beauty & Wellness</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label style="font-size:11px; text-transform:uppercase;">Audience Demographics</label>
+              <select id="match-demographics" class="filter-select">
+                <option value="female-young">Female dominant (18–25)</option>
+                <option value="male-young">Male dominant (18–25)</option>
+                <option value="unisex-mid">Balanced unisex (18–35)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label style="font-size:11px; text-transform:uppercase;">Campaign Base Budget (₹)</label>
+              <select id="match-budget" class="filter-select">
+                <option value="30000">Up to ₹30,000</option>
+                <option value="60000">₹30,000 - ₹60,000</option>
+                <option value="120000">Above ₹60,000</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label style="font-size:11px; text-transform:uppercase;">Primary Location</label>
+              <select id="match-location" class="filter-select">
+                <option value="Delhi NCR">Delhi NCR</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Goa">Goa</option>
+                <option value="Pune">Pune</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-match-btn-wrap">
+            <button class="btn btn-primary" style="width: 100%;" id="btn-run-match">
+              <i class="fa-solid fa-rotate"></i> Run AI Match Algorithm
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Matching Result -->
+        <div class="ai-match-result glass-card" id="ai-match-result-panel">
+          <div class="glow-panel-bg"></div>
+          
+          <!-- Animated Compatibility Circle -->
+          <div class="meter-wrapper">
+            <svg class="svg-meter" width="200" height="200" viewBox="0 0 200 200">
+              <circle class="meter-bg" cx="100" cy="100" r="90" />
+              <circle class="meter-fill" id="compatibility-fill" cx="100" cy="100" r="90" />
+            </svg>
+            <div class="meter-percentage">
+              <span class="meter-value" id="compatibility-text">0%</span>
+              <span class="meter-lbl">Compatibility</span>
+            </div>
+          </div>
+
+          <div class="matched-creator-info" id="matched-creator-info" style="opacity: 0; transform: translateY(10px); transition: var(--transition-smooth); width: 100%;">
+            <!-- Loaded dynamically in app.js -->
+          </div>
+          
+          <p id="match-status-placeholder" style="color: var(--text-muted); font-size: 14px;">Click "Run AI Match" to trigger algorithmic verification.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fake Influencer Detection Section -->
+    <section class="section" id="anti-fraud">
+      <div class="section-header">
+        <span class="section-label"><i class="fa-solid fa-shield-halved"></i> Security & Trust</span>
+        <h2 class="section-title">AI Fake Influencer Detection</h2>
+        <p class="section-subtitle">We check 25+ parameters to filter out bot accounts, follow-for-follow loops, and comment pods.</p>
+      </div>
+
+      <div style="margin-bottom: 24px; display: flex; justify-content: center; align-items: center; gap: 12px;">
+        <label for="auditor-creator-select" style="font-size:14px; font-weight:600; color:var(--text-secondary);">Select Creator Profile to Audit:</label>
+        <select id="auditor-creator-select" class="filter-select" style="max-width: 250px; display:inline-block;">
+          <!-- Loaded dynamically in app.js -->
+        </select>
+      </div>
+
+      <div class="security-dashboard">
+        <!-- Main Panel: Graph & Audit Details -->
+        <div class="sec-analytics-box glass-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+            <div>
+              <h3 style="font-size:18px; font-weight:700;">Follower Growth Pattern Analysis</h3>
+              <p style="font-size:12px; color:var(--text-muted);">Comparing organic growth models against suspicious spike intervals</p>
+            </div>
+            <span style="font-size:11px; font-weight:700; background:rgba(16, 185, 129, 0.1); color:var(--emerald); padding:4px 8px; border-radius:4px;">LIVE FEED</span>
+          </div>
+
+          <div class="sec-summary-cards">
+            <div class="sec-mini-card">
+              <h4>Followers audited</h4>
+              <p id="audit-followers">482,410</p>
+            </div>
+            <div class="sec-mini-card">
+              <h4>Engagement Ratio</h4>
+              <p id="audit-engagement">6.25%</p>
+            </div>
+            <div class="sec-mini-card">
+              <h4>Comment Quality</h4>
+              <p id="audit-comment-quality">Excellent</p>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Follower growth Chart -->
+          <div class="sec-chart-container">
+            <svg viewBox="0 0 500 200" width="100%" height="100%" style="overflow: visible;" id="audit-chart-svg">
+              <!-- Loaded dynamically or static with dynamic label values -->
+              <defs>
+                <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--indigo)" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="var(--indigo)" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="40" x2="500" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+              <line x1="0" y1="90" x2="500" y2="90" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+              <line x1="0" y1="140" x2="500" y2="140" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+              <line x1="0" y1="190" x2="500" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+              
+              <path id="audit-spike-path" d="M 0 190 L 100 185 L 180 183 L 185 100 L 250 95 L 300 92 L 305 40 L 400 38 L 500 36" fill="none" stroke="rgba(244, 63, 94, 0.3)" stroke-width="2" stroke-dasharray="4,4" />
+              <path id="audit-organic-path" d="M 0 190 L 100 170 L 200 148 L 300 110 L 400 78 L 500 45" fill="none" stroke="var(--indigo)" stroke-width="3" stroke-linecap="round" />
+              <path id="audit-fill-path" d="M 0 190 L 100 170 L 200 148 L 300 110 L 400 78 L 500 45 L 500 200 L 0 200 Z" fill="url(#chartGlow)" />
+              
+              <text x="260" y="160" fill="var(--text-muted)" font-size="10">Suspicious bought follower patterns</text>
+              <text x="180" y="70" fill="var(--indigo)" font-size="10" font-weight="600">Organic Follower Growth Curve</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Sidebar Panel: Safety Checks -->
+        <div class="sec-sidebar">
+          <div class="sec-radar-card glass-card" style="display:flex; flex-direction:column; gap:20px;">
+            <h3 style="font-size:18px; font-weight:700;">Credibility Health</h3>
+            
+            <div style="display:flex; align-items:center; gap:20px; border-bottom:1px solid var(--border-color); padding-bottom:20px;">
+              <div style="width:70px; height:70px; border-radius:50%; background:var(--bg-pill); display:flex; align-items:center; justify-content:center; border:2px solid var(--emerald); box-shadow:0 0 10px rgba(16, 185, 129, 0.2);">
+                <span style="font-family:var(--font-heading); font-size:24px; font-weight:800; color:var(--emerald);" id="audit-authenticity-pct">87%</span>
+              </div>
+              <div>
+                <h4 style="font-size:15px; font-weight:600; color:var(--emerald);">Authenticity Score</h4>
+                <p style="font-size:12px; color:var(--text-muted);">Calculated from organic audience behaviors</p>
+              </div>
+            </div>
+
+            <div class="sec-indicator">
+              <span>Bot Detection Risk</span>
+              <span class="value val-green" id="audit-bot-risk">Low (2.4%)</span>
+            </div>
+
+            <div class="sec-indicator">
+              <span>Comment Credibility</span>
+              <span class="value val-green" id="audit-comment-cred">High (89.1% organic)</span>
+            </div>
+
+            <div class="sec-indicator">
+              <span>Follower/Following Ratio</span>
+              <span class="value val-green" id="audit-ratio">Optimal (240:1)</span>
+            </div>
+
+            <div class="sec-indicator">
+              <span>Fraud Risk Indicator</span>
+              <span class="value val-green" id="audit-verdict" style="background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:4px;">SAFE / APPROVED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features Grid -->
+    <section class="section" id="features">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Enterprise Capabilities</h2>
+        <p class="section-subtitle">Everything you need to orchestrate hyper-efficient marketing campaigns.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--indigo);"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 class="feature-title">AI Creator Score</h3>
+          <p class="feature-desc">Dynamic scoring system reflecting profile engagement, historical consistency, brand safety records, and audience authenticity indices.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--purple);"><i class="fa-solid fa-code-merge"></i></div>
+          <h3 class="feature-title">Smart Matching</h3>
+          <p class="feature-desc">Proprietary logic mapping brands with creators using deep demographics, localized target markets, and category-focused audience filters.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--cyan);"><i class="fa-solid fa-user-shield"></i></div>
+          <h3 class="feature-title">Verified Profiles</h3>
+          <p class="feature-desc">All registered creator profiles are validated via direct API feeds. Followers and performance statistics are verified, eliminating manual pdf media kits.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--emerald);"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="feature-title">Campaign Management</h3>
+          <p class="feature-desc">Post campaigns, receive direct applications, define creative milestones, upload draft media, request edits, and approve content in one dashboard.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--yellow);"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="feature-title">Real-time Analytics</h3>
+          <p class="feature-desc">Keep track of ongoing collaborations. Monitor metrics including post engagement, stories views, click-through rates (CTR), and conversion statistics.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="card-icon-wrap" style="color:var(--rose);"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="feature-title">Secure Messaging</h3>
+          <p class="feature-desc">Integrated messaging for campaign briefs, price negotiations, digital contracts, and milestones. Direct notifications via mobile updates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+      <div class="section-header">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Plans that scale with your brand</h2>
+        <p class="section-subtitle">Simple, transparent pricing for both content creators and brands.</p>
+      </div>
+
+      <div class="pricing-toggle-wrap">
+        <button class="pricing-toggle-btn active" id="btn-toggle-creator-plans">Creator Plans</button>
+        <button class="pricing-toggle-btn" id="btn-toggle-brand-plans">Brand & Enterprise</button>
+      </div>
+
+      <div class="pricing-grid" id="pricing-grid-container">
+        <!-- Dynamically rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Roadmap Timeline Section -->
+    <section class="section" id="roadmap">
+      <div class="section-header">
+        <span class="section-label">Roadmap</span>
+        <h2 class="section-title">The Path Ahead</h2>
+        <p class="section-subtitle">Our milestones as we expand features, integrations, and reach.</p>
+      </div>
+
+      <div class="roadmap-timeline">
+        <div class="roadmap-line-progress" id="roadmap-line-progress"></div>
+        
+        <div class="roadmap-node active" data-phase="1">
+          <div class="node-dot"></div>
+          <span class="node-phase">Phase 1</span>
+          <h3 class="node-title">MVP Launch</h3>
+          <p class="node-desc">Core profile generation across Instagram/YouTube, dynamic filtering directory, and essential direct messaging tools.</p>
+        </div>
+
+        <div class="roadmap-node active" data-phase="2">
+          <div class="node-dot"></div>
+          <span class="node-phase">Phase 2</span>
+          <h3 class="node-title">AI Match 2.0</h3>
+          <p class="node-desc">Introduction of geographic clustering models, campaign wizard setups, and fake metric security audit logs.</p>
+        </div>
+
+        <div class="roadmap-node" data-phase="3">
+          <div class="node-dot"></div>
+          <span class="node-phase">Phase 3</span>
+          <h3 class="node-title">Scale Integrations</h3>
+          <p class="node-desc">Launch TikTok API synchronization, automatic draft reviewing portals, and smart escrows for global campaign payouts.</p>
+        </div>
+
+        <div class="roadmap-node" data-phase="4">
+          <div class="node-dot"></div>
+          <span class="node-phase">Phase 4</span>
+          <h3 class="node-title">Global Vision</h3>
+          <p class="node-desc">AI-powered voice matching audits for video content creators, cross-continent compliance support, and multi-currency wallets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+      <div class="section-header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">Trusted by industry leaders</h2>
+        <p class="section-subtitle">Here is what creative professionals and brand marketers say about CollabNet.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <p class="testimonial-quote">"CollabNet revolutionized our creator outreach program. Previously we spent hours cross-referencing media kits. Now we execute laser-focused matches inside one central tool."</p>
+          <div class="testimonial-author">
+            <img class="author-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=60" alt="Author">
+            <div class="author-details">
+              <h4>Meera Sen</h4>
+              <p>VP Marketing, Zora Cosmetics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <p class="testimonial-quote">"Getting verified on CollabNet was an absolute game changer. Brands search and filter directly to me based on my real audience stats. I closed three major sponsorships this month."</p>
+          <div class="testimonial-author">
+            <img class="author-img" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=60" alt="Author">
+            <div class="author-details">
+              <h4>Kabir Mehta</h4>
+              <p>Tech Content Creator (YouTube)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-card">
+          <p class="testimonial-quote">"The fake follower audit reporting has saved us lakhs. We identified multiple high-follower target accounts with highly synthetic engagement metrics before spending a single rupee."</p>
+          <div class="testimonial-author">
+            <img class="author-img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=60" alt="Author">
+            <div class="author-details">
+              <h4>Priya Sharma</h4>
+              <p>Influencer Lead, Alpha Footwear</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section" id="stats" style="border-top: 1px solid var(--border-color); margin-bottom: 80px;">
+      <div class="stats-banner">
+        <div class="stat-item">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Verified Creators Connected</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="2400">0</div>
+          <div class="stat-label">Cr Market Value Enablement</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-label">Active Campaigns Managed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="95">0</div>
+          <div class="stat-label">AI Match Success Rate</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 2. BROWSE CREATORS VIEW (#view-creators)       -->
+  <!-- ============================================== -->
+  <div id="view-creators" class="view-container">
+    <div class="dashboard-grid">
+      <!-- Left Sidebar: Filters -->
+      <aside class="dashboard-filters glass-card">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+          <i class="fa-solid fa-sliders" style="color:var(--indigo);"></i> Filters
+        </h3>
+        <p style="font-size:11px; color:var(--text-muted); border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:12px;">Refine your search parameters</p>
+        
+        <div class="filter-group">
+          <label for="filter-search">Keyword Search</label>
+          <input type="text" id="filter-search" class="filter-input" placeholder="e.g. Aisha, Tech, Delhi">
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-niche">Niche Focus</label>
+          <select id="filter-niche" class="filter-select">
+            <option value="all">All Niches</option>
+            <option value="fashion">Fashion & Lifestyle</option>
+            <option value="tech">Technology & Gadgets</option>
+            <option value="gaming">Gaming & Esports</option>
+            <option value="travel">Travel & Photography</option>
+            <option value="beauty">Beauty & Wellness</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Social Platforms</label>
+          <div style="display:flex; gap:10px;">
+            <label style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; background:var(--bg-pill); padding:8px 4px; border-radius:6px; font-size:10px; border:1px solid var(--border-color);">
+              <input type="checkbox" id="platform-insta" checked style="accent-color:var(--indigo);">
+              <i class="fa-brands fa-instagram" style="color:#e1306c; font-size:16px;"></i>
+            </label>
+            <label style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; background:var(--bg-pill); padding:8px 4px; border-radius:6px; font-size:10px; border:1px solid var(--border-color);">
+              <input type="checkbox" id="platform-yt" checked style="accent-color:var(--indigo);">
+              <i class="fa-brands fa-youtube" style="color:#ff0000; font-size:16px;"></i>
+            </label>
+            <label style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; background:var(--bg-pill); padding:8px 4px; border-radius:6px; font-size:10px; border:1px solid var(--border-color);">
+              <input type="checkbox" id="platform-x" checked style="accent-color:var(--indigo);">
+              <i class="fa-brands fa-twitter" style="color:#1da1f2; font-size:16px;"></i>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="range-slider-wrap">
+            <div class="range-label-values">
+              <label>Min Followers</label>
+              <span id="val-followers-display">50K</span>
+            </div>
+            <input type="range" id="filter-followers" class="range-slider" min="10" max="1000" step="10" value="50">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="range-slider-wrap">
+            <div class="range-label-values">
+              <label>Min Engagement</label>
+              <span id="val-engagement-display">2.0%</span>
+            </div>
+            <input type="range" id="filter-engagement" class="range-slider" min="1.0" max="10.0" step="0.5" value="2.0">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="range-slider-wrap">
+            <div class="range-label-values">
+              <label>Max Budget (₹)</label>
+              <span id="val-budget-display">₹100,000</span>
+            </div>
+            <input type="range" id="filter-budget" class="range-slider" min="10000" max="300000" step="5000" value="100000">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label for="filter-sort">Sort By</label>
+          <select id="filter-sort" class="filter-select">
+            <option value="score-desc">AI Creator Score (High-Low)</option>
+            <option value="followers-desc">Followers (High-Low)</option>
+            <option value="engagement-desc">Engagement (High-Low)</option>
+            <option value="price-asc">Budget (Low-High)</option>
+          </select>
+        </div>
+
+        <button class="btn btn-secondary" style="width: 100%; font-size: 12px; margin-top: 8px;" id="btn-reset-filters">
+          <i class="fa-solid fa-rotate-left"></i> Reset All Filters
+        </button>
+      </aside>
+
+      <!-- Middle: Directory Grid -->
+      <main class="dashboard-main" style="grid-column: span 2;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div>
+            <h2 style="font-size:24px; font-weight:700;">Verified Content Creators</h2>
+            <p style="font-size:13px; color:var(--text-muted);" id="creators-count-display">Showing 0 creators</p>
+          </div>
+        </div>
+        <div class="creators-grid" id="creators-grid">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 3. BROWSE CAMPAIGNS VIEW (#view-campaigns)     -->
+  <!-- ============================================== -->
+  <div id="view-campaigns" class="view-container">
+    <div class="dashboard-grid">
+      <!-- Left Sidebar: Filters -->
+      <aside class="dashboard-filters glass-card">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+          <i class="fa-solid fa-sliders" style="color:var(--indigo);"></i> Campaigns Filters
+        </h3>
+        <p style="font-size:11px; color:var(--text-muted); border-bottom:1px solid var(--border-color); padding-bottom:12px; margin-bottom:12px;">Find perfect sponsorships</p>
+        
+        <div class="filter-group">
+          <label for="campaign-search">Search Keyword</label>
+          <input type="text" id="campaign-search" class="filter-input" placeholder="e.g. Summer, Nike, Gaming">
+        </div>
+
+        <div class="filter-group">
+          <label for="campaign-filter-niche">Campaign Niche</label>
+          <select id="campaign-filter-niche" class="filter-select">
+            <option value="all">All Niches</option>
+            <option value="fashion">Fashion & Lifestyle</option>
+            <option value="tech">Technology & Gadgets</option>
+            <option value="gaming">Gaming & Esports</option>
+            <option value="travel">Travel & Photography</option>
+            <option value="beauty">Beauty & Wellness</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <div class="range-slider-wrap">
+            <div class="range-label-values">
+              <label>Min Payout (₹)</label>
+              <span id="val-campaign-budget-display">₹10,000</span>
+            </div>
+            <input type="range" id="campaign-filter-budget" class="range-slider" min="5000" max="200000" step="5000" value="10000">
+          </div>
+        </div>
+
+        <button class="btn btn-secondary" style="width: 100%; font-size: 12px; margin-top: 8px;" id="btn-reset-campaign-filters">
+          <i class="fa-solid fa-rotate-left"></i> Reset Filters
+        </button>
+      </aside>
+
+      <!-- Middle: Campaigns Directory -->
+      <main class="dashboard-main" style="grid-column: span 2;">
+        <h2 style="font-size:24px; font-weight:700; margin-bottom:4px;">Available Sponsorship Campaigns</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;" id="campaigns-count-display">Showing 0 active campaigns</p>
+        
+        <div class="campaigns-list-grid" id="campaigns-list-grid" style="display:flex; flex-direction:column; gap:16px;">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 4. CAMPAIGN DETAILS VIEW (#view-campaign-details) -->
+  <!-- ============================================== -->
+  <div id="view-campaign-details" class="view-container">
+    <div style="max-width:800px; margin: 40px auto; padding: 0 24px;" id="campaign-details-content">
+      <!-- Loaded dynamically in app.js -->
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 5. BRAND DASHBOARD VIEW (#view-brand-dashboard)-->
+  <!-- ============================================== -->
+  <div id="view-brand-dashboard" class="view-container">
+    <div class="dashboard-grid">
+      <!-- Brand stats top and campaigns summary -->
+      <main class="dashboard-main" style="grid-column: span 2;">
+        <h2 style="font-size:26px; font-weight:800; margin-bottom:4px;">Brand Operations Console</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:24px;">Manage campaigns, proposals, and analytics payouts</p>
+        
+        <div class="dash-metrics" style="margin-bottom:32px;">
+          <div class="metric-card glass-card">
+            <span>Campaigns Posted</span>
+            <h3 id="brand-stat-campaigns">0 campaigns</h3>
+          </div>
+          <div class="metric-card glass-card">
+            <span>Proposals Received</span>
+            <h3 id="brand-stat-proposals">0 applicants</h3>
+          </div>
+          <div class="metric-card glass-card">
+            <span>Sponsorship Budget Spent</span>
+            <h3 id="brand-stat-budget">₹0</h3>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <h3 style="font-size:20px; font-weight:700;">My Posted Campaigns</h3>
+          <button class="btn btn-primary" id="btn-brand-dash-new-campaign"><i class="fa-solid fa-plus"></i> Post Campaign</button>
+        </div>
+
+        <div id="brand-campaigns-list" style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">Incoming Creator Applications</h3>
+        <div id="brand-applications-list" style="display:flex; flex-direction:column; gap:16px;">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+      </main>
+
+      <aside class="dashboard-right">
+        <!-- SVG Analytics Widgets -->
+        <div class="dashboard-right-card glass-card">
+          <div class="right-section-title">
+            <span>Conversion Flow</span>
+            <i class="fa-solid fa-funnel-dollar" style="color:var(--cyan);"></i>
+          </div>
+          <div style="height:140px; margin-top:10px;">
+            <svg viewBox="0 0 300 120" width="100%" height="100%">
+              <!-- Funnel SVG representation -->
+              <polygon points="50,10 250,10 210,40 90,40" fill="var(--indigo-glow)" stroke="var(--indigo)" stroke-width="1.5" />
+              <polygon points="90,45 210,45 180,75 120,75" fill="var(--purple-glow)" stroke="var(--purple)" stroke-width="1.5" />
+              <polygon points="120,80 180,80 160,110 140,110" fill="var(--cyan-glow)" stroke="var(--cyan)" stroke-width="1.5" />
+              <text x="150" y="28" fill="#fff" font-size="8" text-anchor="middle">Audited Views: 150K</text>
+              <text x="150" y="63" fill="#fff" font-size="8" text-anchor="middle">Engagement: 12.4K</text>
+              <text x="150" y="98" fill="#fff" font-size="8" text-anchor="middle">Clicks: 3.1K</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- System Activity Reports -->
+        <div class="dashboard-right-card glass-card">
+          <div class="right-section-title">
+            <span>Recent Alerts</span>
+            <i class="fa-solid fa-bell" style="color:var(--yellow);"></i>
+          </div>
+          <div class="campaign-list" id="brand-alert-notifications" style="font-size:12px; display:flex; flex-direction:column; gap:10px;">
+            <!-- Loaded dynamically in app.js -->
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 6. CREATOR DASHBOARD VIEW (#view-creator-dashboard) -->
+  <!-- ============================================== -->
+  <div id="view-creator-dashboard" class="view-container">
+    <div class="dashboard-grid">
+      <main class="dashboard-main" style="grid-column: span 2;">
+        <h2 style="font-size:26px; font-weight:800; margin-bottom:4px;">Creator Studio</h2>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:24px;">Track sponsorship invitations, proposal statuses, and channel audits</p>
+
+        <div class="dash-metrics" style="margin-bottom:32px;">
+          <div class="metric-card glass-card">
+            <span>AI Authenticity Score</span>
+            <h3 id="creator-dash-score">0/100</h3>
+          </div>
+          <div class="metric-card glass-card">
+            <span>Proposals Submitted</span>
+            <h3 id="creator-dash-proposals-count">0 proposals</h3>
+          </div>
+          <div class="metric-card glass-card">
+            <span>Sponsorship Revenue</span>
+            <h3 id="creator-dash-revenue">₹0</h3>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-bottom:32px;">
+          <!-- Left side: Quick Profile Sync info -->
+          <div class="glass-card" style="padding:24px;">
+            <h3 style="font-size:18px; font-weight:700; margin-bottom:12px;">Sponsorship Pricing Settings</h3>
+            <div class="form-group" style="margin-bottom:12px;">
+              <label>Base Price per post (₹)</label>
+              <input type="number" id="creator-input-price" class="form-input" value="45000">
+            </div>
+            <div class="form-group" style="margin-bottom:16px;">
+              <label>Primary Location</label>
+              <input type="text" id="creator-input-location" class="form-input" value="Delhi NCR">
+            </div>
+            <button class="btn btn-primary" id="btn-save-creator-settings" style="width:100%;">Save Collaboration Profile</button>
+          </div>
+
+          <!-- Right side: Quick stats line SVG -->
+          <div class="glass-card" style="padding:24px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <h3 style="font-size:18px; font-weight:700; margin-bottom:4px;">Audience Organic Flow</h3>
+              <p style="font-size:11px; color:var(--text-muted);">Audited channel impressions growth trajectory</p>
+            </div>
+            <div style="height:100px;">
+              <svg viewBox="0 0 300 100" width="100%" height="100%">
+                <path d="M 0 90 Q 50 60 100 70 T 200 30 T 300 10" fill="none" stroke="var(--emerald)" stroke-width="3" stroke-linecap="round" />
+                <path d="M 0 90 Q 50 60 100 70 T 200 30 T 300 10 L 300 100 L 0 100 Z" fill="rgba(16,185,129,0.1)" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">My Submitted Applications</h3>
+        <div id="creator-proposals-list" style="display:flex; flex-direction:column; gap:16px;">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+      </main>
+
+      <aside class="dashboard-right">
+        <div class="dashboard-right-card glass-card">
+          <div class="right-section-title">
+            <span>Sponsorship Offers</span>
+            <i class="fa-solid fa-file-invoice-dollar" style="color:var(--emerald);"></i>
+          </div>
+          <div id="creator-offers-list" style="display:flex; flex-direction:column; gap:10px; font-size:12px;">
+            <!-- Loaded dynamically in app.js -->
+          </div>
+        </div>
+
+        <div class="dashboard-right-card glass-card">
+          <div class="right-section-title">
+            <span>System Announcements</span>
+            <i class="fa-solid fa-bullhorn" style="color:var(--indigo);"></i>
+          </div>
+          <div style="font-size:12px; color:var(--text-secondary); display:flex; flex-direction:column; gap:12px;">
+            <p><strong><i class="fa-solid fa-circle-check" style="color:var(--cyan);"></i> Verification Complete:</strong> Your audience authenticity was verified at 87% organic alignment.</p>
+            <p><strong><i class="fa-solid fa-shield-halved" style="color:var(--purple);"></i> Safety Audit:</strong> No suspicious growth drops or bot comment clusters detected.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 7. SECURE MESSENGER VIEW (#view-messages)      -->
+  <!-- ============================================== -->
+  <div id="view-messages" class="view-container">
+    <div class="dashboard-grid" style="grid-template-columns: 300px 1fr; max-width: 1200px; height: calc(100vh - 120px); padding-top:16px; margin: 0 auto;">
+      <!-- Threads side column -->
+      <aside class="dashboard-filters glass-card" style="padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:12px; height:100%; position:static;">
+        <h3 style="font-size:16px; font-weight:700; margin-bottom:8px;"><i class="fa-solid fa-comment-dots" style="color:var(--indigo);"></i> Active Chats</h3>
+        <div id="chat-threads-list" style="display:flex; flex-direction:column; gap:10px;">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+      </aside>
+
+      <!-- Active Thread messaging log column -->
+      <main class="glass-card" style="display:flex; flex-direction:column; overflow:hidden; height:100%;">
+        <!-- Header info -->
+        <div style="padding:16px; border-bottom:1px solid var(--border-color); display:flex; align-items:center; gap:12px;" id="chat-active-header">
+          <p style="color:var(--text-muted);">Select a thread to start messaging</p>
+        </div>
+
+        <!-- Chat log pane -->
+        <div style="flex-grow:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; gap:16px;" id="chat-messages-log">
+          <!-- Loaded dynamically in app.js -->
+        </div>
+
+        <!-- Input control panel -->
+        <div style="padding:16px; border-top:1px solid var(--border-color); background:rgba(15,23,42,0.85); display:flex; gap:12px; align-items:center;">
+          <input type="text" id="chat-input-message" class="form-input" style="flex-grow:1;" placeholder="Type sponsorship details or terms..." disabled>
+          <button class="btn btn-primary" id="btn-chat-send" disabled><i class="fa-solid fa-paper-plane"></i> Send</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 8. POST CAMPAIGN FORM VIEW (#view-post-campaign) -->
+  <!-- ============================================== -->
+  <div id="view-post-campaign" class="view-container">
+    <div style="max-width: 600px; margin: 40px auto; padding: 0 24px;">
+      <div class="glass-card" style="padding: 32px;">
+        <h2 style="font-family:var(--font-heading); font-size:28px; font-weight:800; margin-bottom:8px;" class="gradient-text">Post a Campaign</h2>
+        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:28px;">Specify campaign targets for matching engine filters.</p>
+        
+        <form id="form-post-campaign" style="display:flex; flex-direction:column; gap:18px;">
+          <div class="form-group">
+            <label for="camp-title">Campaign Campaign Title</label>
+            <input type="text" id="camp-title" class="form-input" placeholder="e.g. FitGlow Activewear Launch" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="camp-niche">Category Niche</label>
+              <select id="camp-niche" class="form-input">
+                <option value="fashion">Fashion & Lifestyle</option>
+                <option value="tech">Technology & Gadgets</option>
+                <option value="gaming">Gaming & Esports</option>
+                <option value="travel">Travel & Photography</option>
+                <option value="beauty">Beauty & Wellness</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="camp-budget">Total Campaign Budget (₹)</label>
+              <input type="number" id="camp-budget" class="form-input" placeholder="e.g. 50000" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="camp-audience">Target Audience Demographics</label>
+              <select id="camp-audience" class="form-input">
+                <option value="Female (18-25)">Female (18-25)</option>
+                <option value="Male (18-25)">Male (18-25)</option>
+                <option value="Unisex (18-35)">Unisex (18-35)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="camp-location">Target Location</label>
+              <input type="text" id="camp-location" class="form-input" placeholder="e.g. Mumbai, India" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="camp-desc">Campaign Details & Guidelines</label>
+            <textarea id="camp-desc" class="form-input" style="min-height:120px; resize:vertical; font-family:var(--font-body);" placeholder="Write the campaign description, deliverables (e.g. 1 Instagram Reel, 2 Stories), and key brand messaging guidelines..." required></textarea>
+          </div>
+
+          <div style="display:flex; gap:16px; margin-top:12px;">
+            <a href="#/brand/dashboard" class="btn btn-secondary" style="flex:1; text-align:center;">Cancel</a>
+            <button type="submit" class="btn btn-primary" style="flex:1;">Submit Campaign</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 9. CREATOR PROFILE DETAIL (#view-profile)      -->
+  <!-- ============================================== -->
+  <div id="view-profile" class="view-container">
+    <div class="profile-container" id="profile-container-content">
+      <!-- Profile Content is rendered dynamically by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#/" class="logo">
+            <span class="logo-dot"></span>CollabNet
+          </a>
+          <p>The premium, AI-powered matchmaker bridging professional creators with global visionary brands.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#/creators">Browse Creators</a></li>
+            <li><a href="#/campaigns">Find Campaigns</a></li>
+            <li><a href="#/ai-match">AI Match System</a></li>
+            <li><a href="#/anti-fraud">Fraud Prevention</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Creator School</a></li>
+            <li><a href="#">Market Analytics</a></li>
+            <li><a href="#">Brand Guide</a></li>
+            <li><a href="#">Media Kits</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Security Audit</a></li>
+            <li><a href="#">Escrow Rules</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CollabNet Inc. All rights reserved.</p>
+        <p>Built with ❤️ for the Creator Economy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODAL: CREATOR REGISTRATION WIZARD (JOIN)      -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="modal-wizard">
+    <div class="modal-content glass-card">
+      <button class="modal-close-btn" id="modal-wizard-close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="modal-title">Join as Verified Creator</h3>
+      <p class="modal-subtitle">Follow three quick steps to build your AI Creator Score profile.</p>
+      
+      <!-- Wizard Progress Indicators -->
+      <div class="wizard-steps">
+        <div class="wizard-step-node active" data-step="1">1</div>
+        <div class="wizard-step-node" data-step="2">2</div>
+        <div class="wizard-step-node" data-step="3">3</div>
+      </div>
+
+      <!-- Step 1: Base Details -->
+      <div class="wizard-step-content active" data-step="1">
+        <div class="form-group">
+          <label for="wiz-name">Full Name</label>
+          <input type="text" id="wiz-name" class="form-input" placeholder="e.g. Aisha Patel">
+        </div>
+        <div class="form-group">
+          <label for="wiz-email">Email Address</label>
+          <input type="email" id="wiz-email" class="form-input" placeholder="name@creator.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="wiz-password">Password</label>
+            <input type="password" id="wiz-password" class="form-input" placeholder="••••••••">
+          </div>
+          <div class="form-group">
+            <label for="wiz-niche">Creator Niche</label>
+            <select id="wiz-niche" class="form-input">
+              <option value="fashion">Fashion & Lifestyle</option>
+              <option value="tech">Technology & Gadgets</option>
+              <option value="gaming">Gaming & Esports</option>
+              <option value="travel">Travel & Photography</option>
+              <option value="beauty">Beauty & Wellness</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Social Synchronization -->
+      <div class="wizard-step-content" data-step="2">
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom: 12px;">Sync your social channels to verify audience demographics.</p>
+        
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button type="button" class="btn btn-secondary wiz-sync-btn" data-platform="instagram" style="justify-content: flex-start; width:100%; border-color:#e1306c;">
+            <i class="fa-brands fa-instagram" style="color:#e1306c; font-size:18px;"></i>
+            <span>Sync Instagram Business Account</span>
+            <i class="fa-solid fa-link" style="margin-left:auto;"></i>
+          </button>
+          
+          <button type="button" class="btn btn-secondary wiz-sync-btn" data-platform="youtube" style="justify-content: flex-start; width:100%; border-color:#ff0000;">
+            <i class="fa-brands fa-youtube" style="color:#ff0000; font-size:18px;"></i>
+            <span>Sync YouTube Channel API</span>
+            <i class="fa-solid fa-link" style="margin-left:auto;"></i>
+          </button>
+
+          <button type="button" class="btn btn-secondary wiz-sync-btn" data-platform="twitter" style="justify-content: flex-start; width:100%; border-color:#1da1f2;">
+            <i class="fa-brands fa-twitter" style="color:#1da1f2; font-size:18px;"></i>
+            <span>Sync X / Twitter Developer API</span>
+            <i class="fa-solid fa-link" style="margin-left:auto;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Rates and Location -->
+      <div class="wizard-step-content" data-step="3">
+        <div class="form-group">
+          <label for="wiz-followers">Total Followers Count</label>
+          <input type="number" id="wiz-followers" class="form-input" placeholder="e.g. 250000">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="wiz-baseprice">Post Base Price (₹)</label>
+            <input type="number" id="wiz-baseprice" class="form-input" placeholder="e.g. 45000">
+          </div>
+          <div class="form-group">
+            <label for="wiz-location">Primary Location</label>
+            <input type="text" id="wiz-location" class="form-input" placeholder="e.g. Mumbai, India">
+          </div>
+        </div>
+        <div class="form-group" style="flex-direction:row; gap:10px; align-items:center; margin-top:10px;">
+          <input type="checkbox" id="wiz-agree" style="accent-color:var(--indigo);">
+          <label for="wiz-agree" style="font-size:12px; font-weight:normal; cursor:pointer;">I consent to allow CollabNet AI to calculate my authenticity rating.</label>
+        </div>
+      </div>
+
+      <!-- Wizard Buttons -->
+      <div class="wizard-actions">
+        <button class="btn btn-secondary" id="wiz-btn-prev" style="visibility: hidden;">Back</button>
+        <button class="btn btn-primary" id="wiz-btn-next">Next Step</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: BRAND REGISTRATION WIZARD               -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="modal-brand-signup">
+    <div class="modal-content glass-card">
+      <button class="modal-close-btn" id="modal-brand-signup-close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="modal-title">Join as Verified Brand</h3>
+      <p class="modal-subtitle">Post campaigns and match with authentic creators instantly.</p>
+      
+      <form id="brand-signup-form" style="display:flex; flex-direction:column; gap:14px;">
+        <div class="form-group">
+          <label for="brand-name">Brand / Company Name</label>
+          <input type="text" id="brand-name" class="form-input" placeholder="e.g. Nike India" required>
+        </div>
+        <div class="form-group">
+          <label for="brand-email">Email Address</label>
+          <input type="email" id="brand-email" class="form-input" placeholder="marketing@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="brand-password">Password</label>
+          <input type="password" id="brand-password" class="form-input" placeholder="••••••••" required>
+        </div>
+        <div class="form-group">
+          <label for="brand-website">Website URL</label>
+          <input type="url" id="brand-website" class="form-input" placeholder="https://nike.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:10px;">Register Brand Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: GENERAL AUTHENTICATION (LOGIN)          -->
+  <!-- ============================================== -->
+  <div class="modal-overlay" id="modal-auth">
+    <div class="modal-content glass-card">
+      <button class="modal-close-btn" id="modal-auth-close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="modal-title" id="auth-title">Welcome Back</h3>
+      <p class="modal-subtitle" id="auth-subtitle">Login to access your campaigns and proposals.</p>
+      
+      <form id="auth-form" style="display:flex; flex-direction:column; gap:16px;">
+        <div class="form-group">
+          <label for="auth-email">Email Address</label>
+          <input type="email" id="auth-email" class="form-input" placeholder="name@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="auth-password">Password</label>
+          <input type="password" id="auth-password" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:8px;">Continue</button>
+      </form>
+
+      <p style="font-size:12px; text-align:center; color:var(--text-secondary); margin-top:20px;" id="auth-toggle-msg">
+        Don't have an account? <span style="color:var(--indigo); cursor:pointer; font-weight:600;" id="auth-toggle-link">Sign Up</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Entry -->
+  <script src="app.js"></script>
+</body>
+</html>
